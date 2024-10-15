@@ -66,3 +66,41 @@ function mirrorEnds(string:string):string{
 }
 
 // console.log(mirrorEnds(''));
+
+
+
+
+
+function withoutString(base:string, remove:string):string{
+    let base1 = base.toLowerCase()
+    let remove1 = remove.toLowerCase()
+    let result:string = ''
+    for(let i = 0; i < base1.length; i++){
+        if( base1.slice(i, i + remove1.length) == remove1 ){
+            i += remove1.length - 1
+        }else{
+            result += base1[i]
+        }
+    }
+    return result;
+}
+
+console.log(withoutString('Hello there', 'e'));
+
+
+
+
+
+
+
+function countTriple(str:string){
+    let counter = 0
+    for(let i = 0; i < str.length; i++){
+        if((str[i] === str[i + 1]) && (str[i] === str[i + 2]))
+            counter++;
+    }
+    return counter;
+}
+
+console.log(countTriple('aaxxxbbbcce'));
+

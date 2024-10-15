@@ -32,11 +32,11 @@ function countYZ(str1) {
     }
     return count;
 }
-console.log(countYZ('feez goody'));
+// console.log(countYZ('feez goody'));
 // Given a string, look for a mirror image (backwards) string at both the beginning and end of the given string. 
 // In other words, zero or more characters at the very begining of the given string, and at the very end of the 
 // string in reverse order (possibly overlapping). For example, the string "abXYZba" has the mirror end "ab".
-var mirrorEnds = function (string) {
+function mirrorEnds(string) {
     var string2 = '';
     var newString = '';
     for (var i = string.length - 1; i >= 0; i--) {
@@ -51,5 +51,20 @@ var mirrorEnds = function (string) {
         }
     }
     return newString;
-};
-console.log(mirrorEnds('abba'));
+}
+// console.log(mirrorEnds(''));
+function withoutString(base, remove) {
+    var base1 = base.toLowerCase();
+    var remove1 = remove.toLowerCase();
+    var result = '';
+    for (var i = 0; i < base1.length; i++) {
+        if (base1.slice(i, i + remove1.length) === remove1) {
+            i += remove1.length - 1;
+        }
+        else {
+            result += base1[i];
+        }
+    }
+    return result;
+}
+console.log(withoutString('Hello there', 'e'));
